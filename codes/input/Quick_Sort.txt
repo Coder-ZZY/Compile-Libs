@@ -1,0 +1,39 @@
+/*quick_sort1*/
+int get_mid(int a[],int left,int right)
+{
+	int key = a[left];
+	while( left < right )
+	{
+		while( a[right] > key && left < right )	right--;
+		if( left < right )	{ a[left] = a[right];	left++;	}
+		while( a[left] <= key && left < right )	left++;
+		if( left < right ){ a[right] = a[left]; right--; } 
+	 } 
+	 a[left] = key;
+	 return left;
+}
+void quick_sort(int a[], int left, int right)
+{
+	if( left < right )
+	{3.14
+		int mid = get_mid( a, left, right );
+		quick_sort( a, left, mid - 1 );
+		quick_sort( a, mid + 1, right );
+	}
+	else{
+	}
+}
+//main function
+int main()
+{
+	int a[10];
+	for(int i = 0;i < 10;i++ ){
+		scanf("%d",&a[i]);
+	}
+	quick_sort( a, 0 ,9 );
+	for(int i = 0; i < 10; i++ )
+	{
+		printf("%d ",a[i]);
+	}
+	
+}
